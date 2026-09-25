@@ -1,6 +1,7 @@
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+import java.util.ArrayList;
 
 public class Practice {
     /**
@@ -12,7 +13,15 @@ public class Practice {
      * @return the sum of the odd numbers in the array
      */
     public static int oddSum(int[] nums) {
-        return 0;
+        int sum = 0;
+        if (nums == null) return 0;
+        for (int num : nums) {
+            if(num % 2 != 0) {
+                sum += num;
+            }
+        }
+
+        return sum;
     }
 
     /**
@@ -27,7 +36,23 @@ public class Practice {
      * @throws NullPointerException if words is null
      */
     public static String shortestWord(Set<String> words) {
-        return null;
+        String best = null; 
+        if(words.isEmpty()) throw new IllegalArgumentException();
+        for (String word : words) {
+            if(best == null) {
+                best = word;
+
+            }
+            if(best.length() > word.length()) {
+                best = word;
+            } else if(best.length() == word.length()) {
+                if(best.compareTo(word) > 0) {
+                best = word;
+                }
+            }
+            
+        }
+        return best;
     }
 
     /**
@@ -40,6 +65,7 @@ public class Practice {
      * @throws NullPointerException if ages is null
      */
     public static Set<String> adults(Map<String, Integer> ages) {
+        ArrayList<String> adults = new ArrayList<>();
         return null;
     }
 
